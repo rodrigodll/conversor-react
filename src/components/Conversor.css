@@ -1,0 +1,25 @@
+.Conversor {
+    background: #fff;
+    display: inline-block;
+    padding: 0 20px 20px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 30px;
+    border: 1px #efefef solid;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Conversor input[type="tel"] {
+    background: #fafafa;
+    border: 1px #e3e3e3 solid;
+    padding: 10px;
+}
+
+.Conversor input[type="button"] {
+    padding: 10px;
+    background: #ebebeb;
+    border: 1px #ebebeb solid;
+    cursor: pointer;
+}
