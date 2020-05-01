@@ -1,13 +1,27 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './App.css';
+// import '/public/bootstrap.css';
+
+import logo from './logo150.png';
 
 import Conversor from './components/Conversor'
 
 function App() {
   return (
     <div className="App">
-    <Conversor moedaA="USD" moedaB="BRL"></Conversor>
-  </div>
+
+      <div class="container">
+        <div class="row">      
+          <img src={logo} className="App-logo" alt="logo" />
+        </div>
+      </div>
+      
+      <div class="container">
+        <div class="row">      
+          <Conversor moedaA="BTC" moedaB="BRL"></Conversor>
+        </div>
+      </div>
+    </div>
   );
 }
 
