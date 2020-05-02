@@ -18,10 +18,11 @@ export default class Conversor extends Component {
 		this.state = {
 			value_from: '',
 			value_to: 0,
-			selectedOptionFrom: 'ddd',
-			selectedOptionTo: '',
-			currentQuote: 0,
+			selectedOptionFrom: optionsSwitchFrom[0].options[0],
+			selectedOptionTo: optionsSwitchFrom[0].options[3],
+			currentQuote: 0
 		}
+		console.log(`valueFrom:`, this.state.selectedOptionFrom)
 		
 		this.converter = this.converter.bind(this)
 		this.handleChangeFrom = this.handleChangeFrom.bind(this)
@@ -37,7 +38,8 @@ export default class Conversor extends Component {
 	
 	converter() {
 		// busca moedas a serem convertidas   
-		let de_para = `${this.props.moedaA}_${this.props.moedaB}`
+		let de_para = `${this.state.selectedOptionFrom.value}_${this.state.selectedOptionTo.value}`
+		console.log(de_para)
 		
 		// monta url de consulta de api
 		let get_api = `https://free.currconv.com/api/v7/convert?q=${de_para}&compact=y&apiKey=df9d1631139b8415d2e1`
@@ -137,13 +139,17 @@ export default class Conversor extends Component {
 									<label>{this.state.selectedOptionFrom.symbol}</label>
 									<input type="tel" onChange={(event) => {this.setState({value_from:event.target.value})}}></input>
 								</div>
-
-								{/* Botão de submit */}
-								<button className="conversor__trigger" onClick={this.converter}>Converter</button>
 							</div>
 
 							<div className="conversor__line">
-								<p>{this.state.selectedOptionFrom.symbol} {this.state.currentQuote}</p>
+								{this.state.currentQuote === 0 ? '': 
+									<div class="conversor__rate">
+										<span>Taxa de câmbio</span>
+										<em>
+											{this.state.selectedOptionFrom.symbol + this.state.currentQuote}
+										</em>
+									</div>
+								}
 								{/* Botão de submit */}
 								<button className="conversor__trigger" onClick={this.converter}>
 									Converter 
@@ -160,7 +166,7 @@ export default class Conversor extends Component {
 						<div class="conversor__box conversor__box--to col-sm">
 							<div className="conversor__line">
 								<div class="">
-								<div className={`currency-flag currency-flag-lg currency-flag-${this.state.selectedOptionTo.value ? this.state.selectedOptionTo.value : 'BRL'}`}></div>
+									<div className={`currency-flag currency-flag-lg currency-flag-${this.state.selectedOptionTo.value ? this.state.selectedOptionTo.value : 'BRL'}`}></div>
 
 									{/* Seletor de moeada */}
 									<Select
@@ -172,8 +178,17 @@ export default class Conversor extends Component {
 										styles={customStyles}
 										/>
 								</div>
+							</div>
+							<div className="conversor__line">
 								{/* Resultado */}
-								<p>{this.state.value_to !== 0 ? this.state.selectedOptionTo.symbol +' '+ this.state.value_to : ''}</p>
+								{this.state.value_to !== 0 ? 
+									<div class="conversor__input conversor__input--result">
+										<p>
+											<span>{this.state.selectedOptionTo.symbol}</span>
+											{this.state.value_to}
+										</p>
+									</div> : ''
+								}
 							</div>
 						</div>
 					</div>

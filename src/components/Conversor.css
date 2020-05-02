@@ -2,11 +2,18 @@
     background: #fff;
     width: 100%;
     font-weight: 400;
+    max-width: 750px;
+    display: inline-block;
+    margin: 0 auto;
+    box-shadow: rgba(19, 26, 50, 0.5) 0 0 100px -30px;
 }
 .conversor__box {
     padding: 50px;
     position: relative;
     height: 200px;
+}
+.conversor__box.conversor__box--from {
+    z-index: 1;
 }
 
 .conversor__box.conversor__box--to {
@@ -59,28 +66,59 @@
 .conversor__input {
     display: flex;
     position: relative;
+    border-bottom: 1px #e3e4df solid;
 }
 
 .conversor__input label {
     color: #393d50;
-    border-bottom: 1px #e3e4df solid;
     line-height: 30px;
 }
 .conversor__input input {
     border: 0;
-    border-bottom: 1px #e3e4df solid;
     color: #393d50;
-    width: 100%;
     padding-left: 10px;
     line-height: 30px;
     font-size: 17px;
     letter-spacing: 1px;
+    font-family: 'Nunito';
 }
 .conversor__input input:focus {
     outline: 0;
 }
+
+.conversor__input.conversor__input--result p {
+    height: 32px;
+    margin: 0;
+    font-weight: 600;
+    font-family: 'Nunito';
+    line-height: 32px;
+    font-size: 23px;
+}
+
+.conversor__input.conversor__input--result p span{
+    font-family: 'Quicksand';
+    font-weight: 300;
+    margin-right: 6px;
+    font-size: 17px;
+}
+
 .conversor__line {
     margin-bottom: 10px;
+}
+
+.conversor__rate {
+    text-align: left;
+    font-weight: 700;
+    color: #313864;
+}
+.conversor__rate span {
+    font-size: 10px;
+    display: block;
+    margin-bottom: 4px;
+}
+.conversor__rate em {
+    font-style: initial;
+    font-weight: 600;
 }
 .currency-flag {
     float: left;
