@@ -2,25 +2,88 @@
   text-align: center;
 }
 
-.App-logo {
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 button:focus, input:focus {
   outline: 0;
+}
+
+.header {
+  padding: 30px 0;
+}
+
+.header__logo {
+  padding: 20px 0;
+}
+
+.header__menu {
+  text-align: center;
+}
+
+.header__menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.header__menu ul li {
+  display: inline-block;
+}
+
+.header__menu ul li a {
+  margin: 10px 15px;
+  padding: 3px 10px;
+  text-decoration: none;
+  color: #9a9dad;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.header__menu ul li a:hover {
+  color: #b7b9c3;
+}
+
+.header__menu ul li a.active {
+  color: #fff;
+  border-bottom: 1px #fff solid;
+}
+
+.heading {
+  text-align: center;
+  display: block;
+  margin: 0 auto 50px;
+  font-weight: 400;
+  color: #666c93;
+  max-width: 600px;
+  text-shadow: rgba(0, 0, 0, 0.2) 1px 1px 4px;
+}
+.heading a {
+  color: #09b3d0;
+  text-decoration: none;
+}
+
+footer.footer {
+  background: #2f3857;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+footer.footer p {
+  color: #61699c;
+  font-size: 13px;
+}
+
+footer.footer p a {
+  color: #757998;
+}
+
+
+/* ============================
+    responsive 
+==============================*/
+@media (max-width: 768px) {
+  footer.footer {
+    position: initial;
+  }
+  .header__menu ul li a {
+    padding: 13px 12px;
+    margin: 0;
+  }
 }
