@@ -64,6 +64,7 @@ footer.footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+  display: none;
 }
 footer.footer p {
   color: #61699c;

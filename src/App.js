@@ -1,10 +1,10 @@
 import React from 'react'
 import './App.css';
-// import '/public/bootstrap.css';
 
 import logo from './logo150.png';
 
 import Conversor from './components/Conversor'
+// import Chart from './components/Chart'
 
 function App() {
   return (
@@ -39,19 +39,21 @@ function App() {
         <div className="row">
           <div className="col-12">
             <h3 className="heading">
-              My first APP built on <a href="https://pt-br.reactjs.org/" target="_blank">React JS</a>, a currency exchange solution created with the goal of personal development.
+              My first APP built on <a href="https://pt-br.reactjs.org/" target="_blank" rel="noopener noreferrer">React JS</a>, a currency exchange solution created with the goal of personal development.
             </h3>
           </div>
           <Conversor/>
         </div>
       </div>
 
+      {/* <Chart /> */}
+
       <footer className="footer">
         <div className="container">
           <div className="row">
             <div className="col-12">
               <p className="">
-                Rodrigodll <a href="http://github.com/rodrigodll/" target="_blank">github</a> © 2020
+                Rodrigodll <a href="http://github.com/rodrigodll/" target="_blank" rel="noopener noreferrer">github</a> © 2020
               </p>
             </div>
           </div>

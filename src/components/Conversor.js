@@ -89,7 +89,9 @@ export default class Conversor extends Component {
 				padding: 0,
 				border: 0,
 				background: 'none',
-				boxShadow: 'none'
+				boxShadow: 'none',
+				cursor: 'pointer',
+				paddingLeft: 40
 			}),
 
 			indicatorSeparator: () => ({
@@ -170,17 +172,17 @@ export default class Conversor extends Component {
 										</em>
 									</div>
 								}
-								{/* Botão de submit */}
-								<button className="conversor__trigger" onClick={this.converter}>
-									Converter 
-									<span className="conversor__trigger--icon step-1">
-										<img src={arrow} className="App-logo" alt="logo" />
-									</span>
-									<span className="conversor__trigger--icon step-2">
-										<img src={arrow} className="App-logo" alt="logo" />
-									</span>
-								</button>
 							</div>
+							{/* Botão de submit */}
+							<button className="conversor__trigger" onClick={this.converter}>
+								Converter 
+								<span className="conversor__trigger--icon step-1">
+									<img src={arrow} alt="logo" />
+								</span>
+								<span className="conversor__trigger--icon step-2">
+									<img src={arrow} alt="logo" />
+								</span>
+							</button>
 						</div>
 						
 						<div class="conversor__box conversor__box--to col-sm">
