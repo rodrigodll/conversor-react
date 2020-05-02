@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Select from 'react-select'
+import CurrencyFormat from 'react-currency-format';
+
 import coinList from './listOption'
 
 import arrow from '../svg/arrow.svg'
@@ -137,7 +139,25 @@ export default class Conversor extends Component {
 								{/* input de Valor */}
 								<div className="conversor__input">
 									<label>{this.state.selectedOptionFrom.symbol}</label>
-									<input type="tel" onChange={(event) => {this.setState({value_from:event.target.value})}}></input>
+									{/* <input type="tel" onChange={(event) => {this.setState({value_from:event.target.value})}}/> */}
+									<CurrencyFormat 
+										thousandSeparator={true}
+										thousandSpacing='1'
+										mask="_"
+										decimalSeparator="."
+										allowNegative={false}
+										hintText="Some placeholder"
+										// prefix={this.state.selectedOptionFrom.symbol}
+										type="text"
+										placeholder={this.state.selectedOptionFrom.symbol + '0,00'}
+										// onChange={(event) => {this.setState({value_from:event.target.value})}}
+										onValueChange={(values) => {
+											const {formattedValue, value} = values;
+											// formattedValue = $2,223
+											// value ie, 2223
+											this.setState({value_from: formattedValue})
+										}}
+									/>
 								</div>
 							</div>
 
