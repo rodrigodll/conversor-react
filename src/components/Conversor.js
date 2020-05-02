@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Select from 'react-select'
 import coinList from './listOption'
 
+import arrow from '../svg/arrow.svg'
+
 import './Conversor.css';
 
 const optionsSwitchFrom = coinList.coinList
@@ -155,6 +157,16 @@ export default class Conversor extends Component {
 
 							<div className="conversor__line">
 								<p>{this.state.selectedOptionFrom.symbol} {this.state.currentQuote}</p>
+								{/* Botão de submit */}
+								<button className="conversor__trigger" onClick={this.converter}>
+									Converter 
+									<span className="conversor__trigger--icon step-1">
+										<img src={arrow} className="App-logo" alt="logo" />
+									</span>
+									<span className="conversor__trigger--icon step-2">
+										<img src={arrow} className="App-logo" alt="logo" />
+									</span>
+								</button>
 							</div>
 						</div>
 						
