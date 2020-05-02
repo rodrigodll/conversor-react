@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "./static/css/main.df9fdef5.chunk.css",
-    "main.js": "./static/js/main.addcb61e.chunk.js",
-    "main.js.map": "./static/js/main.addcb61e.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.a90ece73.js",
-    "runtime-main.js.map": "./static/js/runtime-main.a90ece73.js.map",
-    "static/js/2.090a20f8.chunk.js": "./static/js/2.090a20f8.chunk.js",
-    "static/js/2.090a20f8.chunk.js.map": "./static/js/2.090a20f8.chunk.js.map",
-    "index.html": "./index.html",
-    "precache-manifest.5d8049361cad461c36c971eb5bc2ea53.js": "./precache-manifest.5d8049361cad461c36c971eb5bc2ea53.js",
-    "service-worker.js": "./service-worker.js",
-    "static/css/main.df9fdef5.chunk.css.map": "./static/css/main.df9fdef5.chunk.css.map",
-    "static/js/2.090a20f8.chunk.js.LICENSE.txt": "./static/js/2.090a20f8.chunk.js.LICENSE.txt",
-    "static/media/arrow.svg": "./static/media/arrow.a8c9cd43.svg",
-    "static/media/index.css": "./static/media/bg.bccb4b87.png"
+    "main.css": "/conversor-react/static/css/main.134d6677.chunk.css",
+    "main.js": "/conversor-react/static/js/main.f8a20f12.chunk.js",
+    "main.js.map": "/conversor-react/static/js/main.f8a20f12.chunk.js.map",
+    "runtime-main.js": "/conversor-react/static/js/runtime-main.a5f66cf6.js",
+    "runtime-main.js.map": "/conversor-react/static/js/runtime-main.a5f66cf6.js.map",
+    "static/js/2.c22bc43f.chunk.js": "/conversor-react/static/js/2.c22bc43f.chunk.js",
+    "static/js/2.c22bc43f.chunk.js.map": "/conversor-react/static/js/2.c22bc43f.chunk.js.map",
+    "index.html": "/conversor-react/index.html",
+    "precache-manifest.1110fe9644d4d5626d72c3bd4898ee99.js": "/conversor-react/precache-manifest.1110fe9644d4d5626d72c3bd4898ee99.js",
+    "service-worker.js": "/conversor-react/service-worker.js",
+    "static/css/main.134d6677.chunk.css.map": "/conversor-react/static/css/main.134d6677.chunk.css.map",
+    "static/js/2.c22bc43f.chunk.js.LICENSE.txt": "/conversor-react/static/js/2.c22bc43f.chunk.js.LICENSE.txt",
+    "static/media/arrow.svg": "/conversor-react/static/media/arrow.a8c9cd43.svg",
+    "static/media/index.css": "/conversor-react/static/media/bg.bccb4b87.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.a90ece73.js",
-    "static/js/2.090a20f8.chunk.js",
-    "static/css/main.df9fdef5.chunk.css",
-    "static/js/main.addcb61e.chunk.js"
+    "static/js/runtime-main.a5f66cf6.js",
+    "static/js/2.c22bc43f.chunk.js",
+    "static/css/main.134d6677.chunk.css",
+    "static/js/main.f8a20f12.chunk.js"
   ]
 }
