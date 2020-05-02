@@ -4,6 +4,8 @@ export const coinList  = [
 		{ value: 'EUR', label: 'Euro', symbol: '€' },
 		{ value: 'GBP', label: 'Libra esterlina[C]', symbol: '£' },
 		{ value: 'BRL', label: 'Real Brasileiro', symbol: 'R$' },
+	]},
+	{ label: 'Criptomoedas', options: [
 		{ value: 'BTC', label: 'Bitcoin', symbol: '₿' },
 	]},
 	{ value: 'AED', label: 'Dirame dos Emirados Árabes Unidos', symbol: 'د.إ' },
@@ -16,7 +18,7 @@ export const coinList  = [
 	{ value: 'AUD', label: 'Dólar australiano', symbol: '$' },
 	{ value: 'AWG', label: 'Florim arubano', symbol: 'ƒ' },
 	{ value: 'AZN', label: 'Manat azerbaijano', symbol: '' },
-	{ value: 'BAM', label: 'Marco convertível da Bósnia e Herzegovina', symbol: 'KM ou КМ[O]' },
+	{ value: 'BAM', label: 'Marco convertível da Bósnia e Herzegovina', symbol: 'KM' },
 	{ value: 'BBD', label: 'Dólar dos Barbados', symbol: '$' },
 	{ value: 'BDT', label: 'Taka bangladexense', symbol: '৳' },
 	{ value: 'BGN', label: 'Lev búlgaro', symbol: 'лв' },
