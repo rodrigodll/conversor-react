@@ -8,11 +8,7 @@ import './Conversor.css';
 
 const optionsSwitchFrom = coinList.coinList
 
-const optionsSwitchTo = [
-	{ value: 'USD', label: 'USD - Dólar' , symbol: '$'},
-	{ value: 'BRL', label: 'BRL - Real Brasileiro' , symbol: 'R$'},
-	{ value: 'EUR', label: 'EUR - Euro', symbol: '€' }
-]
+const optionsSwitchTo = coinList.coinList
 
 export default class Conversor extends Component {
 	constructor(props) {
@@ -68,8 +64,6 @@ export default class Conversor extends Component {
 	}
 	
 	render() {
-		const { selectedOption } = this.state;
-
 		const customStyles = {
 			menu: (provided, state) => ({
 				...provided,
@@ -82,20 +76,16 @@ export default class Conversor extends Component {
 			input: () => ({
 				// backgroundColor: 'red',
 				// width: '100%',
-				// textAlign: 'left',
+				borderRadius: 0,
+				appearance: 'none'
 			}),
 		  
 			control: (provided, state) => ({
 				...provided,
-				// border: '1px solid red',
 				padding: 0,
 				border: 0,
 				background: 'none',
-				// fontWeight: '700'
-			}),
-
-			dropdownIndicator: () => ({
-				fill: 'blue',
+				boxShadow: 'none'
 			}),
 
 			indicatorSeparator: () => ({
@@ -108,36 +98,33 @@ export default class Conversor extends Component {
 			}),
 			groupHeading: () => ({
 				// border: '1px solid blue',
-				fontWeight: '700'
+				fontWeight: '700',
+				padding: '20px 10px',
 			}),
 
-			placeholder: () => ({
-				fontWeight: '400'
-			}),
-		  
 			singleValue: (provided, state) => {
 				const opacity = state.isDisabled ? 0.5 : 1;
 				const transition = 'opacity 300ms';
 		  
 				return { ...provided, opacity, transition };
-				return {...provided, color: state.isFocused ? 'blue' : 'red' }
 			}
 		  }
 		return (
 			<div className="Conversor">
 				<div class="container">
 					<div className="row">
-						<div class="conversor__box col-sm">
+						<div class="conversor__box conversor__box--from col-sm">
 							<div className="conversor__line">
-								<div className={`currency-flag currency-flag-lg currency-flag-${this.state.selectedOptionFrom.value ? this.state.selectedOptionFrom.value : 'USD'}`}></div>
+								<div className={`currency-flag currency-flag-lg currency-flag-${this.state.selectedOptionFrom.value}`}></div>
 								
 								{/* Seletor de moeada */}
 								<Select
 									className="input--text"
+									defaultValue={optionsSwitchFrom[0].options[0]}
 									options={optionsSwitchFrom}
 									noOptionsMessage={() => "Moeda não encontrada"}
 									isSearchable
-									value={this.state.selectedOptionFrom}
+									// value={this.state.selectedOptionFrom}
 									onChange={this.handleChangeFrom}
 									styles={customStyles}
 									placeholder={this.state.placeholder}
