@@ -2,14 +2,16 @@ import React, { Component } from 'react'
 import Select from 'react-select'
 import CurrencyFormat from 'react-currency-format';
 
-import coinList from './listOption'
-
+// svg
 import arrow from '../svg/arrow.svg'
+import orientation from '../svg/orientation.svg'
 
+// css
 import './Conversor.css';
 
+// json de lista
+import coinList from './listOption'
 const optionsSwitchFrom = coinList.coinList
-
 const optionsSwitchTo = coinList.coinList
 
 export default class Conversor extends Component {
@@ -29,13 +31,14 @@ export default class Conversor extends Component {
 		this.converter = this.converter.bind(this)
 		this.handleChangeFrom = this.handleChangeFrom.bind(this)
 		this.handleChangeTo = this.handleChangeTo.bind(this)
+		this.inverter = this.inverter.bind(this)
 	}
 	
 	handleChangeFrom = selectedOptionFrom => {
-		this.setState({ selectedOptionFrom }, () => console.log(`valueFrom:`, this.state.selectedOptionFrom));
+		this.setState({ selectedOptionFrom },() => console.log(`valueFrom:`, this.state.selectedOptionFrom));
 	};
 	handleChangeTo = selectedOptionTo => {
-		this.setState({ selectedOptionTo }, () => console.log(`valueTo:`, this.state.selectedOptionTo));
+		this.setState({ selectedOptionTo },() => console.log(`valueTo:`, this.state.selectedOptionTo));
 	};	
 	
 	converter() {
@@ -64,6 +67,17 @@ export default class Conversor extends Component {
 			// Define resultado da conversão
 			this.setState({currentQuote})
 			this.setState({value_to})
+		})
+	}
+
+	inverter() {
+		console.log('aaaaaaa', this.state.selectedOptionFrom)
+
+		this.setState({
+			selectedOptionTo: this.state.selectedOptionFrom
+		})
+		this.setState({
+			selectedOptionFrom: this.state.selectedOptionTo
 		})
 	}
 	
@@ -151,7 +165,7 @@ export default class Conversor extends Component {
 										hintText="Some placeholder"
 										// prefix={this.state.selectedOptionFrom.symbol}
 										type="text"
-										placeholder={this.state.selectedOptionFrom.symbol + '0,00'}
+										placeholder={'0,00'}
 										// onChange={(event) => {this.setState({value_from:event.target.value})}}
 										onValueChange={(values) => {
 											const {formattedValue, value} = values;
@@ -187,6 +201,16 @@ export default class Conversor extends Component {
 						
 						<div class="conversor__box conversor__box--to col-sm">
 							<div className="conversor__line">
+								{/* Botão para inverter moedas */}
+								<button className="conversor__trigger conversor__trigger--inverter" onClick={this.inverter}>
+									Converter 
+									<span className="conversor__trigger--icon step-1">
+										<img src={orientation} alt="logo" />
+									</span>
+									<span className="conversor__trigger--icon step-2">
+										<img src={orientation} alt="logo" />
+									</span>
+								</button>
 								<div class="">
 									<div className={`currency-flag currency-flag-lg currency-flag-${this.state.selectedOptionTo.value ? this.state.selectedOptionTo.value : 'BRL'}`}></div>
 

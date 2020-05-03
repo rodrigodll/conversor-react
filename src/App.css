@@ -80,6 +80,20 @@ footer.footer p a {
     responsive 
 ==============================*/
 @media (max-width: 768px) {
+  .header {
+    padding: 20px 0 30px;
+  }
+  .header__logo {
+    padding: 10px 0;
+  }
+  .heading {
+    font-size: 16px;     
+    margin: 0 auto 30px;
+  }
+
+  .header__menu ul li a {
+    font-size: 14px;
+  }
   footer.footer {
     position: initial;
   }

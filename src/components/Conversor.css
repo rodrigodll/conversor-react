@@ -11,6 +11,7 @@
     padding: 50px;
     position: relative;
     height: 200px;
+    background: #fff;
 }
 .conversor__box.conversor__box--from {
     z-index: 1;
@@ -63,6 +64,41 @@
     right: 13px;
 }
 
+button.conversor__trigger.conversor__trigger--inverter {
+    top: -20px;
+    right: -40px;
+    background: transparent;
+}
+button.conversor__trigger.conversor__trigger--inverter:hover{
+    box-shadow: none;
+}
+button.conversor__trigger.conversor__trigger--inverter:active,
+button.conversor__trigger.conversor__trigger--inverter:focus {
+    box-shadow: 0 0 0 0 rgba(52, 172, 224, 1);
+    animation: pulse-blue 1s;
+}
+
+.blob.blue {
+	background: rgba(52, 172, 224, 1);
+}
+
+@keyframes pulse-blue {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(52, 172, 224, 0.7);
+	}
+	
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(52, 172, 224, 0);
+	}
+	
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(52, 172, 224, 0);
+	}
+}
+
 .conversor__input {
     display: flex;
     position: relative;
@@ -81,6 +117,7 @@
     font-size: 17px;
     letter-spacing: 1px;
     font-family: 'Nunito';
+    width: 100%;
 }
 .conversor__input input:focus {
     outline: 0;
@@ -309,7 +346,7 @@
 /* ============================
     responsive 
 ==============================*/
-@media (max-width: 768px) {
+@media (max-width: 575px) {
     .Conversor {
         width: calc(100% - 50px);
         margin-bottom: 50px;
@@ -318,17 +355,20 @@
         height: auto;
     }
     .conversor__trigger {
-        width: 100%;
+        width: 140px;
         top: auto;
-        transform: translate(0, 85px);
         font-size: 10px;
         text-transform: uppercase;
         letter-spacing: 2px;
-        position: static;
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 0 auto;
+        position: absolute;
+        bottom: -25px;
+        right: calc(50% - 30px);
+        margin-right: -70px;
+        padding-right: 30px;
     }
     .conversor__trigger span.step-1 {
         position: relative;
@@ -339,7 +379,22 @@
         right: -30px;
         top: -12px;
     }
-    .conversor__trigger span img.step-2 {
-        display: none;
+    .conversor__trigger span.step-2 {
+        right: 13px;
+        transform: rotate(90deg) scale(0.8);
+    }
+
+    button.conversor__trigger.conversor__trigger--inverter {
+        top: -75px;
+        background: #2f3857;
+        position: absolute;
+        right: calc(50% - -80px);
+        font-size: 0;
+        width: 52px;
+        margin-right: -35px;
+    }
+    button.conversor__trigger.conversor__trigger--inverter span.step-2 {
+        right: 14px;
+        filter: invert();
     }
 }
