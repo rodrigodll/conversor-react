@@ -22,16 +22,17 @@ export default class Conversor extends Component {
 		this.state = {
 			value_from: '',
 			value_to: 0,
+			selectedCurrencies: '-',
 			selectedOptionFrom: optionsSwitchFrom[0].options[0],
 			selectedOptionTo: optionsSwitchFrom[0].options[3],
 			currentQuote: 0
 		}
-		console.log(`valueFrom:`, this.state.selectedOptionFrom)
 		
 		this.converter = this.converter.bind(this)
 		this.handleChangeFrom = this.handleChangeFrom.bind(this)
 		this.handleChangeTo = this.handleChangeTo.bind(this)
 		this.inverter = this.inverter.bind(this)
+		this.queryValidator = this.queryValidator.bind(this)
 	}
 	
 	handleChangeFrom = selectedOptionFrom => {
@@ -44,7 +45,8 @@ export default class Conversor extends Component {
 	converter() {
 		// busca moedas a serem convertidas   
 		let de_para = `${this.state.selectedOptionFrom.value}_${this.state.selectedOptionTo.value}`
-		console.log(de_para)
+		
+		this.setState({selectedCurrencies: de_para})
 		
 		// monta url de consulta de api
 		let get_api = `https://free.currconv.com/api/v7/convert?q=${de_para}&compact=y&apiKey=df9d1631139b8415d2e1`
@@ -70,9 +72,26 @@ export default class Conversor extends Component {
 		})
 	}
 
-	inverter() {
-		console.log('aaaaaaa', this.state.selectedOptionFrom)
+	queryValidator() {
+		
+		// valida a chamada da API
+		let valueFrom = this.state.value_from >= 1
+		let selectedCurrenciesEmpty = this.state.selectedCurrencies !== ''
+		let selectedCurrenciesEqual = this.state.selectedCurrencies !== this.state.selectedOptionFrom.value+'_'+this.state.selectedOptionTo.value
+		let equalCoins = this.state.selectedOptionFrom.value !== this.state.selectedOptionTo.value
+		
+		// Executa consulta da API mediante as seguintes condições
+		// 1- Valor de inicial de consulta Maior ou igual a UM
+		// 2- Valor de "selectedCurrencies" não for vazio
+		// 3- Valor de "selectedCurrencies" diferente da consulta anterior
+		// 4- Moeda A diferente de Moeda B
+		if(valueFrom && selectedCurrenciesEmpty && selectedCurrenciesEqual && equalCoins) {
+			this.converter()
+		}
+	}
 
+	inverter() {
+		// inverte valores de select
 		this.setState({
 			selectedOptionTo: this.state.selectedOptionFrom
 		})
@@ -131,9 +150,9 @@ export default class Conversor extends Component {
 		  }
 		return (
 			<div className="Conversor">
-				<div class="container">
+				<div className="container">
 					<div className="row">
-						<div class="conversor__box conversor__box--from col-sm">
+						<div className="conversor__box conversor__box--from col-sm">
 							<div className="conversor__line">
 								<div className={`currency-flag currency-flag-lg currency-flag-${this.state.selectedOptionFrom.value}`}></div>
 								
@@ -158,13 +177,13 @@ export default class Conversor extends Component {
 									{/* <input type="tel" onChange={(event) => {this.setState({value_from:event.target.value})}}/> */}
 									<CurrencyFormat 
 										thousandSeparator={true}
-										thousandSpacing='1'
 										mask="_"
 										decimalSeparator="."
 										allowNegative={false}
-										hintText="Some placeholder"
+										fixedDecimalScale={true}
 										// prefix={this.state.selectedOptionFrom.symbol}
-										type="text"
+										type="tel"
+										decimalScale={2}
 										placeholder={'0,00'}
 										// onChange={(event) => {this.setState({value_from:event.target.value})}}
 										onValueChange={(values) => {
@@ -179,7 +198,7 @@ export default class Conversor extends Component {
 
 							<div className="conversor__line">
 								{this.state.currentQuote === 0 ? '': 
-									<div class="conversor__rate">
+									<div className="conversor__rate">
 										<span>Taxa de câmbio</span>
 										<em>
 											{this.state.selectedOptionFrom.symbol + this.state.currentQuote}
@@ -188,7 +207,7 @@ export default class Conversor extends Component {
 								}
 							</div>
 							{/* Botão de submit */}
-							<button className="conversor__trigger" onClick={this.converter}>
+							<button className="conversor__trigger" onClick={this.queryValidator}>
 								Converter 
 								<span className="conversor__trigger--icon step-1">
 									<img src={arrow} alt="logo" />
@@ -199,7 +218,7 @@ export default class Conversor extends Component {
 							</button>
 						</div>
 						
-						<div class="conversor__box conversor__box--to col-sm">
+						<div className="conversor__box conversor__box--to col-sm">
 							<div className="conversor__line">
 								{/* Botão para inverter moedas */}
 								<button className="conversor__trigger conversor__trigger--inverter" onClick={this.inverter}>
@@ -211,7 +230,7 @@ export default class Conversor extends Component {
 										<img src={orientation} alt="logo" />
 									</span>
 								</button>
-								<div class="">
+								<div className="">
 									<div className={`currency-flag currency-flag-lg currency-flag-${this.state.selectedOptionTo.value ? this.state.selectedOptionTo.value : 'BRL'}`}></div>
 
 									{/* Seletor de moeada */}
@@ -228,7 +247,7 @@ export default class Conversor extends Component {
 							<div className="conversor__line">
 								{/* Resultado */}
 								{this.state.value_to !== 0 ? 
-									<div class="conversor__input conversor__input--result">
+									<div className="conversor__input conversor__input--result">
 										<p>
 											<span>{this.state.selectedOptionTo.symbol}</span>
 											{this.state.value_to}
