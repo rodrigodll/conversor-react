@@ -64,18 +64,21 @@
     right: 13px;
 }
 
-button.conversor__trigger.conversor__trigger--inverter {
+.conversor__trigger.conversor__trigger--inverter {
     top: -20px;
     right: -40px;
     background: transparent;
 }
-button.conversor__trigger.conversor__trigger--inverter:hover{
+.conversor__trigger.conversor__trigger--inverter:hover{
     box-shadow: none;
 }
-button.conversor__trigger.conversor__trigger--inverter:active,
-button.conversor__trigger.conversor__trigger--inverter:focus {
+.conversor__trigger.conversor__trigger--inverter:active,
+.conversor__trigger.conversor__trigger--inverter:focus {
     box-shadow: 0 0 0 0 rgba(52, 172, 224, 1);
     animation: pulse-blue 1s;
+}
+.conversor__trigger.conversor__trigger--fullscreen {
+    display: none;
 }
 
 .blob.blue {
@@ -351,8 +354,17 @@ button.conversor__trigger.conversor__trigger--inverter:focus {
         width: calc(100% - 50px);
         margin-bottom: 50px;
     }
+    .Conversor.is-full {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
     .conversor__box  {
         height: auto;
+    }
+    .is-full .conversor__box  {
+        height: 50vh;
     }
     .conversor__trigger {
         width: 140px;
@@ -384,7 +396,7 @@ button.conversor__trigger.conversor__trigger--inverter:focus {
         transform: rotate(90deg) scale(0.8);
     }
 
-    button.conversor__trigger.conversor__trigger--inverter {
+    .conversor__trigger.conversor__trigger--inverter {
         top: -75px;
         background: #2f3857;
         position: absolute;
@@ -393,8 +405,20 @@ button.conversor__trigger.conversor__trigger--inverter:focus {
         width: 52px;
         margin-right: -35px;
     }
-    button.conversor__trigger.conversor__trigger--inverter span.step-2 {
+    .conversor__trigger.conversor__trigger--inverter span.step-2 {
         right: 14px;
         filter: invert();
+    }
+    .conversor__trigger.conversor__trigger--fullscreen {
+        display: block;
+        top: 0;
+        right: 0;
+        width: 50px;
+        margin: 10px;
+        font-size: 0;
+        background: transparent;
+    }
+    .conversor__trigger.conversor__trigger--fullscreen:hover {
+        box-shadow: none;
     }
 }

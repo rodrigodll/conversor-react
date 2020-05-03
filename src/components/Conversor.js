@@ -5,6 +5,7 @@ import CurrencyFormat from 'react-currency-format';
 // svg
 import arrow from '../svg/arrow.svg'
 import orientation from '../svg/orientation.svg'
+import fullscreen from '../svg/fullscreen.svg'
 
 // css
 import './Conversor.css';
@@ -25,7 +26,8 @@ export default class Conversor extends Component {
 			selectedCurrencies: '-',
 			selectedOptionFrom: optionsSwitchFrom[0].options[0],
 			selectedOptionTo: optionsSwitchFrom[0].options[3],
-			currentQuote: 0
+			currentQuote: 0,
+			isToggleOn: false
 		}
 		
 		this.converter = this.converter.bind(this)
@@ -33,6 +35,7 @@ export default class Conversor extends Component {
 		this.handleChangeTo = this.handleChangeTo.bind(this)
 		this.inverter = this.inverter.bind(this)
 		this.queryValidator = this.queryValidator.bind(this)
+		this.fullscreen = this.fullscreen.bind(this);
 	}
 	
 	handleChangeFrom = selectedOptionFrom => {
@@ -90,13 +93,21 @@ export default class Conversor extends Component {
 		}
 	}
 
+	fullscreen() {
+		this.setState(prevState => ({
+		  isToggleOn: !prevState.isToggleOn
+		}));
+
+		console.log('isToggleOn', this.state.isToggleOn)
+	}
+
 	inverter() {
 		// inverte valores de select
 		this.setState({
-			selectedOptionTo: this.state.selectedOptionFrom
-		})
-		this.setState({
-			selectedOptionFrom: this.state.selectedOptionTo
+			selectedOptionTo: this.state.selectedOptionFrom,
+			selectedOptionFrom: this.state.selectedOptionTo,
+			currentQuote: 0,
+			value_to: 0
 		})
 	}
 	
@@ -149,10 +160,19 @@ export default class Conversor extends Component {
 			}
 		  }
 		return (
-			<div className="Conversor">
+			<div className={this.state.isToggleOn ? 'Conversor is-full' : 'Conversor'}>
 				<div className="container">
 					<div className="row">
 						<div className="conversor__box conversor__box--from col-sm">
+							<button className="conversor__trigger conversor__trigger--fullscreen" onClick={this.fullscreen}>
+								Fullscreen 
+								<span className="conversor__trigger--icon step-1">
+									<img src={fullscreen} alt="fullscreen" />
+								</span>
+								<span className="conversor__trigger--icon step-2">
+									<img src={fullscreen} alt="fullscreen" />
+								</span>
+							</button>
 							<div className="conversor__line">
 								<div className={`currency-flag currency-flag-lg currency-flag-${this.state.selectedOptionFrom.value}`}></div>
 								
@@ -222,7 +242,7 @@ export default class Conversor extends Component {
 							<div className="conversor__line">
 								{/* Botão para inverter moedas */}
 								<button className="conversor__trigger conversor__trigger--inverter" onClick={this.inverter}>
-									Converter 
+									Inverter moeda 
 									<span className="conversor__trigger--icon step-1">
 										<img src={orientation} alt="logo" />
 									</span>
