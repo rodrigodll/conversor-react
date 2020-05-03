@@ -1,5 +1,6 @@
 
 
+
 ## Demo
 > [Live demo](http://rodrigodll.github.io/conversor-react/)
 
@@ -7,13 +8,13 @@
 No diretório do projeto, você pode executar:
 
  `yarn start`
- Executa o projeto local, rodando em uma 
+ Executa o aplicativo no modo de desenvolvimento, abra [localhost:3000](http://localhost:3000) para visualizá-lo no navegador.
  
  `yarn build`
- A compilação é minificada e os nomes de arquivos incluem os hashes.
+Cria o aplicativo para produção na pasta **build**.
  
  `yarn deploy`
-Executa o script ***yarn build***, após o termino de exacução enviao os arquivos para [***gh-pages***](https://pages.github.com/)
+Executa o script ***yarn build***, após o término de exacução envia os arquivos para [***github/gh-pages***](https://pages.github.com/)
 
 ## API
 **Currency Converter API** [link](https://www.currencyconverterapi.com/)
