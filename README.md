@@ -1,4 +1,5 @@
 
+
 ## Demo
 > [Live demo](http://rodrigodll.github.io/conversor-react/)
 
@@ -14,8 +15,13 @@ No diretório do projeto, você pode executar:
  `yarn deploy`
 Executa o script ***yarn build***, após o termino de exacução enviao os arquivos para [***gh-pages***](https://pages.github.com/)
 
-## Componentes
+## API
+**Currency Converter API** [link](https://www.currencyconverterapi.com/)
 
+- Pares de moedas por solicitação: 2
+- Número de solicitações por hora: 100
+- Intervalo de datas no histórico: 8 dias
+- Permitido de volta na história: 1 Ano (s)
 
 ## Componentes
 
@@ -24,6 +30,9 @@ Executa o script ***yarn build***, após o termino de exacução enviao os arqui
     npm i react-currency-format
 
 Usado no input para criar máscara de varlor
+
+------------
+
 
 **react-select** [link](https://react-select.com/home) 
 
