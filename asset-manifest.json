@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/conversor-react/static/css/main.45515435.chunk.css",
-    "main.js": "/conversor-react/static/js/main.9a27b036.chunk.js",
-    "main.js.map": "/conversor-react/static/js/main.9a27b036.chunk.js.map",
+    "main.css": "/conversor-react/static/css/main.38c44b16.chunk.css",
+    "main.js": "/conversor-react/static/js/main.6a771788.chunk.js",
+    "main.js.map": "/conversor-react/static/js/main.6a771788.chunk.js.map",
     "runtime-main.js": "/conversor-react/static/js/runtime-main.a5f66cf6.js",
     "runtime-main.js.map": "/conversor-react/static/js/runtime-main.a5f66cf6.js.map",
-    "static/js/2.90332b90.chunk.js": "/conversor-react/static/js/2.90332b90.chunk.js",
-    "static/js/2.90332b90.chunk.js.map": "/conversor-react/static/js/2.90332b90.chunk.js.map",
+    "static/js/2.92a736f2.chunk.js": "/conversor-react/static/js/2.92a736f2.chunk.js",
+    "static/js/2.92a736f2.chunk.js.map": "/conversor-react/static/js/2.92a736f2.chunk.js.map",
     "index.html": "/conversor-react/index.html",
-    "precache-manifest.b89dd6ddddcf6256bb0f330c7d10c02d.js": "/conversor-react/precache-manifest.b89dd6ddddcf6256bb0f330c7d10c02d.js",
+    "precache-manifest.c130ba7b4d517fa00496ebd1bdb6c7b2.js": "/conversor-react/precache-manifest.c130ba7b4d517fa00496ebd1bdb6c7b2.js",
     "service-worker.js": "/conversor-react/service-worker.js",
-    "static/css/main.45515435.chunk.css.map": "/conversor-react/static/css/main.45515435.chunk.css.map",
-    "static/js/2.90332b90.chunk.js.LICENSE.txt": "/conversor-react/static/js/2.90332b90.chunk.js.LICENSE.txt",
+    "static/css/main.38c44b16.chunk.css.map": "/conversor-react/static/css/main.38c44b16.chunk.css.map",
+    "static/js/2.92a736f2.chunk.js.LICENSE.txt": "/conversor-react/static/js/2.92a736f2.chunk.js.LICENSE.txt",
     "static/media/arrow.svg": "/conversor-react/static/media/arrow.a8c9cd43.svg",
     "static/media/index.css": "/conversor-react/static/media/bg.bccb4b87.png",
+    "static/media/fullscreen.svg": "/conversor-react/static/media/fullscreen.1afd33a6.svg",
     "static/media/logo150.png": "/conversor-react/static/media/logo150.2af64822.png",
     "static/media/orientation.svg": "/conversor-react/static/media/orientation.cb2306d7.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.a5f66cf6.js",
-    "static/js/2.90332b90.chunk.js",
-    "static/css/main.45515435.chunk.css",
-    "static/js/main.9a27b036.chunk.js"
+    "static/js/2.92a736f2.chunk.js",
+    "static/css/main.38c44b16.chunk.css",
+    "static/js/main.6a771788.chunk.js"
   ]
 }
