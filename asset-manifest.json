@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/conversor-react/static/css/main.0128b515.chunk.css",
-    "main.js": "/conversor-react/static/js/main.71fa2215.chunk.js",
-    "main.js.map": "/conversor-react/static/js/main.71fa2215.chunk.js.map",
-    "runtime-main.js": "/conversor-react/static/js/runtime-main.a5f66cf6.js",
-    "runtime-main.js.map": "/conversor-react/static/js/runtime-main.a5f66cf6.js.map",
-    "static/js/2.92a736f2.chunk.js": "/conversor-react/static/js/2.92a736f2.chunk.js",
-    "static/js/2.92a736f2.chunk.js.map": "/conversor-react/static/js/2.92a736f2.chunk.js.map",
+    "main.css": "/conversor-react/static/css/main.91ae8b19.chunk.css",
+    "main.js": "/conversor-react/static/js/main.490a57eb.chunk.js",
+    "main.js.map": "/conversor-react/static/js/main.490a57eb.chunk.js.map",
+    "runtime-main.js": "/conversor-react/static/js/runtime-main.d9a7e852.js",
+    "runtime-main.js.map": "/conversor-react/static/js/runtime-main.d9a7e852.js.map",
+    "static/js/2.ba7245f2.chunk.js": "/conversor-react/static/js/2.ba7245f2.chunk.js",
+    "static/js/2.ba7245f2.chunk.js.map": "/conversor-react/static/js/2.ba7245f2.chunk.js.map",
     "index.html": "/conversor-react/index.html",
-    "precache-manifest.29b11a40146fbbd1c520e2e2aa57e95b.js": "/conversor-react/precache-manifest.29b11a40146fbbd1c520e2e2aa57e95b.js",
+    "precache-manifest.42de577dd7a93d87eaf9fa860d0302ce.js": "/conversor-react/precache-manifest.42de577dd7a93d87eaf9fa860d0302ce.js",
     "service-worker.js": "/conversor-react/service-worker.js",
-    "static/css/main.0128b515.chunk.css.map": "/conversor-react/static/css/main.0128b515.chunk.css.map",
-    "static/js/2.92a736f2.chunk.js.LICENSE.txt": "/conversor-react/static/js/2.92a736f2.chunk.js.LICENSE.txt",
+    "static/css/main.91ae8b19.chunk.css.map": "/conversor-react/static/css/main.91ae8b19.chunk.css.map",
+    "static/js/2.ba7245f2.chunk.js.LICENSE.txt": "/conversor-react/static/js/2.ba7245f2.chunk.js.LICENSE.txt",
     "static/media/arrow.svg": "/conversor-react/static/media/arrow.a8c9cd43.svg",
     "static/media/index.css": "/conversor-react/static/media/bg.bccb4b87.png",
     "static/media/fullscreen.svg": "/conversor-react/static/media/fullscreen.1afd33a6.svg",
@@ -19,9 +19,9 @@
     "static/media/orientation.svg": "/conversor-react/static/media/orientation.cb2306d7.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.a5f66cf6.js",
-    "static/js/2.92a736f2.chunk.js",
-    "static/css/main.0128b515.chunk.css",
-    "static/js/main.71fa2215.chunk.js"
+    "static/js/runtime-main.d9a7e852.js",
+    "static/js/2.ba7245f2.chunk.js",
+    "static/css/main.91ae8b19.chunk.css",
+    "static/js/main.490a57eb.chunk.js"
   ]
 }
